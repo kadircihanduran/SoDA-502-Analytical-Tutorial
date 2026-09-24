@@ -1,0 +1,11 @@
+networkx>=3.0
+numpy
+scipy
+pandas
+matplotlib
+scikit-learn
+jupyter
+
+# Optional: needed only for the Leiden algorithm section
+python-igraph
+leidenalg
