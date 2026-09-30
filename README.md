@@ -15,7 +15,7 @@ After working through the notebook, you should be able to:
 
 ## Dataset
 
-The tutorial mainly uses **Zachary's Karate Club** (Zachary, 1977), a social network of 34 club members and 78 friendships. During the study, a conflict split the club into two factions. Because this real split is known, students can check how well each algorithm recovers it. The dataset is built into `networkx`, so no download is needed.
+The tutorial mainly uses **Zachary's Karate Club** (Zachary, 1977), a social network of 34 club members and 78 friendships. During the study, a conflict split the club into two factions. Because this real split is known, you can check how well each algorithm recovers it. The dataset is built into `networkx`, so no download is needed.
 
 ## Contents
 
@@ -28,39 +28,30 @@ Basic graph concepts (nodes, edges, adjacency matrix, degree, shortest paths), l
 |---|---|---|
 | Degree | Number of direct ties | Freeman (1978) |
 | Closeness | Inverse of the mean distance to all other nodes | Bavelas (1950); Sabidussi (1966) |
-| Harmonic | Sum of inverse distances (works on disconnected graphs) | Marchiori & Latora (2000); Boldi & Vigna (2014) |
 | Betweenness | Share of shortest paths passing through a node | Freeman (1977); Brandes (2001) |
 | Eigenvector | Being connected to other important nodes | Bonacich (1972, 1987) |
-| Katz | Counts walks of all lengths, attenuated by length | Katz (1953) |
 | PageRank | Random surfer with teleportation | Brin & Page (1998) |
-| HITS | Hubs and authorities in directed networks | Kleinberg (1999) |
 
-Also included: from-scratch implementations checked against `networkx` (degree, closeness, power iteration for eigenvector centrality), personalized PageRank, and a Spearman correlation comparison of all measures.
+Also included: from-scratch calculations checked against `networkx` (closeness, power iteration for eigenvector centrality), plus a comparison section with side-by-side plots, the nodes the measures disagree about most, and a Spearman correlation heatmap.
 
 ### Part 2: Community detection
 
 | Algorithm | Approach | Key reference |
 |---|---|---|
 | Modularity (quality function) | Observed vs. expected within-community edges | Newman & Girvan (2004) |
-| Girvan–Newman | Repeatedly remove high edge-betweenness edges | Girvan & Newman (2002) |
 | Greedy modularity (CNM) | Agglomerative modularity maximization | Clauset, Newman & Moore (2004) |
 | Louvain | Multi-level modularity optimization | Blondel et al. (2008) |
 | Leiden | Louvain plus a refinement step that guarantees connected communities | Traag, Waltman & van Eck (2019) |
 | Label propagation | Nodes adopt their neighbours' most common label | Raghavan, Albert & Kumara (2007) |
-| Asynchronous Fluid Communities | Competing "fluids" with a fixed number of communities | Parés et al. (2017) |
-| k-Clique percolation | Overlapping communities built from adjacent cliques | Palla et al. (2005) |
 
-Also included: the resolution parameter and the resolution limit, evaluation with modularity, NMI and ARI against the ground truth, and a section linking centrality to community structure through node roles (Guimerà & Amaral, 2005).
+Also included: a plain-language explanation of NMI and ARI with a small worked example, the effect of the resolution parameter and random seed, a side-by-side comparison of all partitions, and a section linking centrality to community structure through node roles (Guimerà & Amaral, 2005).
 
 ### Part 3: Summary, exercises, and references
-Summary tables, six exercises for students, and a full reference list of about 45 papers and books.
+Summary tables, four exercises for you, and a full reference list.
 
 ## Getting started
 
-### Option 1: Download code 
-You can download network_analysis_tutorial.ipynb and put it to your working directory.
-
-### Option 2: Use command Line
+### Run locally
 
 ```bash
 git clone https://github.com/kadircihanduran/SoDA-502-Analytical-Tutorial.git
@@ -83,7 +74,7 @@ The notebook was tested with networkx 3.6, scikit-learn 1.8 and pandas 3.0.
 
 ```
 .
-├── network_analysis_tutorial.ipynb   # The tutorial notebook
+├── network_analysis_tutorial.ipynb   # The tutorial notebook (saved with outputs)
 ├── requirements.txt                  # Python dependencies
 └── README.md                         # This file
 ```
